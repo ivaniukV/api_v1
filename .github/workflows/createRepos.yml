@@ -1,4 +1,4 @@
-name: 'Create 1000 Repositories'
+name: 'Create 50-100 Repositories'
 
 on:
   workflow_dispatch:
@@ -32,7 +32,7 @@ jobs:
           autoInit=false
           private=false
           repoDescr="test 1000" 
-          for ((i=1; i<=1000; i++)); do
+          for ((i=51; i<=100; i++)); do
             repoName="${{ github.event.inputs.repoName }}$i"
             response=$(curl -X POST -H "Authorization: $orgAdminToken" \
               -H "Accept: application/vnd.github.v3+json" \
